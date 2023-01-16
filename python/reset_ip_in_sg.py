@@ -1,13 +1,15 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """ Reset IP in Security Group with my local one
 
     Usage: reset_ip_in_sg.py TAG_NAME
-           ex) reset_ip_in_sg.py HomeOffice
+           ex: reset_ip_in_sg.py HomeOffice
 
     Note:
         - Security Group Rule ID is used (introduced in July 2021). Boto3 version should be >= 1.8
+        - 서버에서보다는 IP가 종종 바뀌는 집에서 유용하다.
+        - venv를 PRD에서도 사용하기 때문에 보통 Python script 첫 라인에 적던
+          #!/usr/bin/env python3 같은 shebang은 사용하지 않는다.
 
     References:
         - https://stackoverflow.com/questions/62592461/updating-existing-ips-from-a-security-group-in-aws-using-aws-cli
@@ -16,8 +18,8 @@
 """
 import sys
 import argparse
-import boto3
 from requests import get
+import boto3
 from pprint import pprint
 
 
@@ -25,7 +27,8 @@ def parse_args(args):
     """Parse command line parameters
     https://docs.python.org/3/library/argparse.html
     """
-    parser = argparse.ArgumentParser(description='Reset IP in Security Group with my local one - RUN IN LOCAL PC.')
+    parser = argparse.ArgumentParser(
+        description='Reset IP in Security Group with my local one - RUN IN LOCAL PC.')
     parser.add_argument(
         'tag_value',
         help='Value of Name=\'From\' in Tag assigned to SecurityGroupRuleId'
