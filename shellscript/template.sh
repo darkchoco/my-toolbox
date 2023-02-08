@@ -10,6 +10,8 @@
 #   -h, --help                    Print this help
 #   -v, --version                 Print script information
 #
+# ARGUMENTS:
+#
 # EXAMPLE:
 #   ${SCRIPT_NAME} -o DEFAULT arg1 arg2
 #

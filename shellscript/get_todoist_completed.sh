@@ -7,15 +7,13 @@
 #   SHELL=/bin/bash
 #   05 23 * * 0 /home/ubuntu/bin/get_todoist_completed.sh 2>&1
 #
-# OPTIONS:
-#
 # EXAMPLE:
 #   get_todoist_completed.sh
 #
 # REFERENCE:
 #   https://www.baeldung.com/linux/bash-variables-export
 
-source ./env.sh
+source /home/ubuntu/bin/env.sh
 
 curl https://api.todoist.com/sync/v9/completed/get_all \
   -H "Authorization: Bearer $todoist" \
