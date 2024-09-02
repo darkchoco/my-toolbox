@@ -166,4 +166,5 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 # etc.
-venv-my-toolbox/
+python/venv-my-toolbox/
+shellscript/env*.sh
